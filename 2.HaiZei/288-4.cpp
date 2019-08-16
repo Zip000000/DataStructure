@@ -29,7 +29,7 @@ int main() {
     int cnt = 0;
     for (int j = 0; j < m; j++) {
         cin >> op[j];
-        while (p.size() < op[j]) {
+        while (p.size() + q.size() < op[j]) {
             if (p.size() == 0 || num[cnt] < p.top()) p.push(num[cnt++]);
             else q.push(num[cnt++]);
         }
@@ -41,6 +41,7 @@ int main() {
             p.push(q.top());
             q.pop();
         }
+        //cout << "j = " << j << "psize : " << p.size() << "qsize : " << q.size() << ":" << p.top()<< endl;;
         cout << p.top()<< endl;;
     }
 
