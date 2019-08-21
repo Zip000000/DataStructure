@@ -15,7 +15,7 @@
 #include<cmath>
 using namespace std;
 #define BASE 10
-#define MAX_N 100000
+#define MAX_N 1000000
 #define BASE_LETTER '0'
 
 struct Node {
