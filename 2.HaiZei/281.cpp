@@ -54,14 +54,13 @@ int query(char *str) {
 int main() {
     int n, m;
     cin >> n >> m;
+    char str[MAX_N + 5] = {0};
     for (int i = 0; i < n; i++) {
-        char str[MAX_N + 5] = {0};
         cin >> str;
         insert(str);
     }
 
     for (int i = 0; i < m; i++) {
-        char str[MAX_N + 5] = {0};
         cin >> str;
         int ans = query(str);
         cout << ans << endl;

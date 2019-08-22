@@ -25,17 +25,14 @@ struct UnionSet {
     void init(int n) {
         for (int i = 0; i < n; i++) fa[i] = i, val[i] = 0;
     }
-
     int get(int x) {
         if (x == fa[x]) return x;
         int root = get(fa[x]);
         val[x] += val[fa[x]];
         val[x] %= 3;
         return fa[x] = root;
-        
-       // return (fa[x] = (x - fa[x] ? get(fa[x]) : x)); 
+        //return (fa[x] = (x - fa[x] ? get(fa[x]) : x)); 
     }
-
     void merge(int a, int b, int c) {
         int aa = get(a), bb = get(b);
         if (aa == bb) return;
