@@ -13,6 +13,8 @@
 #define MAX_LEN 1024
 #define MAX_NODE 256
 #define BASE 2
+#define Codes_File "./Codes_Huffman"
+#define Trans_File "./Trans_Haffman"
 
 #define swap(a,  b) { \
     __typeof(a) __tmp = a; \
@@ -158,7 +160,7 @@ DAHuffmanTrie *get_DAHuffmanTrie(int n) {
     trie->size = n;
     trie->base = (int *)calloc(sizeof(int), n);
     trie->check = (int *)calloc(sizeof(int), n);
-    trie->data = (unsigned char *)calloc(sizeof(unsigned char), n);
+    trie->data = (unsigned char *)calloc(n, sizeof(unsigned char));
     trie->check[trie->root] = -1;
     return trie;
 }
@@ -229,8 +231,8 @@ void write_down_Haffman_codes(Code *codes, const char *codesfile) {
 void write_down_Haffman_Solve_DATrie(DAHuffmanTrie *DAHuff, const char *filename) {
     FILE *fp = fopen(filename, "w");
     if (fp == NULL) { perror("fopen in write_down_Haffman_codes"); exit(1); }
-    for (int i = 0; i < MAX_NODE; i++) {
-        fprintf(fp, "%d %d %d\n", DAHuff->base[i], DAHuff->check[i], DAHuff->data[i]);
+    for (int i = 0; i < DAHuff->size; i++) {
+        fprintf(fp, "%d %d %d %d\n", i, DAHuff->base[i], DAHuff->check[i], DAHuff->data[i]);
     }
     fclose(fp);
     return ;
