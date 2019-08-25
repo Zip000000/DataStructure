@@ -10,11 +10,11 @@
 #include <string.h>
 
 int main() {
-    unsigned char str;
-    
-    while (~scanf("%c", &str)) {
-        printf("%d", str);
-        printf("%c", str);
+    unsigned char str[100];
+    scanf("%s", str);
+    for (int i = 0; str[i]; i++) {
+        printf("%d\n", str[i]);
+
     }
 
     return 0;
