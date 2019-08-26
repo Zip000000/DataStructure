@@ -15,6 +15,7 @@
 #define BASE 2
 #define Codes_File "./Codes_Huffman"
 #define Trans_File "./Trans_Haffman"
+#define Key_Words_File "./Key_Words"
 
 #define swap(a,  b) { \
     __typeof(a) __tmp = a; \

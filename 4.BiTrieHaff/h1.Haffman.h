@@ -19,6 +19,8 @@
 #define MAX_DAHUFF ((MAX_NODE * BASE) + 100)
 #define Codes_File "./Codes_Huffman"
 #define Trans_File "./Trans_Haffman"
+#define Key_Words_File "./Key_Words"
+#define Key_Words_DATrie "./KeywordsCodes"
 
 
 
@@ -40,6 +42,12 @@ typedef struct HaffmanTree {
     Code *codes;
 } HaffmanTree;
 
+typedef struct DAHuffmanTrie {
+    int *base, *check;
+    int root, size;
+    unsigned char *data;
+} DAHuffmanTrie;
+
 Node *getNewNode();
 
 void outputNodes(Node **nodes);
@@ -51,11 +59,6 @@ HaffmanTree *getNewTree();
 void insertOnce(Node**nodes, int i);
 void extractCode(Node *root, Code *codes, int k, char *buff);
 HaffmanTree *build(Node **nodes);
-typedef struct DAHuffmanTrie {
-    int *base, *check;
-    int root, size;
-    unsigned char *data;
-} DAHuffmanTrie;
 
 DAHuffmanTrie *get_DAHuffmanTrie(int n);
 
