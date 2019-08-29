@@ -90,9 +90,14 @@ void buildDATrie(int ind, Node *root, DATrie *tree) {
 }
 
 int query(DATrie *tree, const char *str) {
+    int p = tree->root;
     for (int i = 0; str[i]; i++) {
-        
+        int ind = str[i] - BEGIN_LETTER;
+        int child = tree->base[p] + ind;
+        if (abs(tree->check[child]) != p) return false;
+        p = child;
     }
+    return (tree->check[p] < 0);
 }
 
 void clearDA(DATrie *tree) {
