@@ -84,7 +84,6 @@ int KMP(char *s, char *t) {
         if (t[j + 1] == t[i]) j += 1;
         nxt[i] = j;
     }
-    
     for (int i = 0, j = -1; s[i]; i++) {
         while (j != -1 && t[j + 1] != s[i]) j = nxt[j];
         if (t[j + 1] == s[i]) j += 1;
@@ -102,6 +101,5 @@ int main() {
     TEST(KMP, text, pattern);    
     TEST(sunday, text, pattern);    
     TEST(shift_and, text, pattern);    
-    
     return 0;
 }
