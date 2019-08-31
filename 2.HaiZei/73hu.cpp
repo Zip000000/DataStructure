@@ -62,7 +62,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             if (g[i][j] == 'X') continue;
-            if (u.get(ind(i, j)) - u.get(0)) ans += 1;
+            if (u.get(ind(i, j)) != u.get(0)) ans += 1;
         }
     }
     cout << ans << endl;
