@@ -1,8 +1,8 @@
 /*************************************************************************
-	> File Name: 324.cpp
+	> File Name: 180.cpp
 	> Author: Zip 
 	> Mail: 307110017@qq.com 
-	> Created Time: 2019年08月22日 星期四 18时49分47秒
+	> Created Time: 2019年09月19日 星期四 18时21分32秒
  ************************************************************************/
 
 #include<iostream>
@@ -15,8 +15,11 @@
 #include<cmath>
 using namespace std;
 
-#define MAX_N 500000
-
 int main() {
-    cout << 123 % 10 << endl;
+    int n;
+    cin >> n;
+
+    
+    
+    return 0;
 }

@@ -1,8 +1,8 @@
 /*************************************************************************
-	> File Name: 324.cpp
+	> File Name: 185.cpp
 	> Author: Zip 
 	> Mail: 307110017@qq.com 
-	> Created Time: 2019年08月22日 星期四 18时49分47秒
+	> Created Time: 2019年09月18日 星期三 14时51分00秒
  ************************************************************************/
 
 #include<iostream>
@@ -15,8 +15,19 @@
 #include<cmath>
 using namespace std;
 
-#define MAX_N 500000
-
 int main() {
-    cout << 123 % 10 << endl;
+    int n;
+    cin >> n;
+    
+    int f[3] = {1, 1, 0};
+    
+    int i;
+    for (i = 2; i < n; i++) {
+        f[i % 3] = f[(i + 1) % 3] + f[(i + 2) % 3];
+    }
+    cout << f[(i - 1) % 3] << endl;
+
+    
+    
+    return 0;
 }

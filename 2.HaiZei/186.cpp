@@ -1,8 +1,8 @@
 /*************************************************************************
-	> File Name: 324.cpp
+	> File Name: 186.cpp
 	> Author: Zip 
 	> Mail: 307110017@qq.com 
-	> Created Time: 2019年08月22日 星期四 18时49分47秒
+	> Created Time: 2019年09月18日 星期三 14时55分49秒
  ************************************************************************/
 
 #include<iostream>
@@ -15,8 +15,19 @@
 #include<cmath>
 using namespace std;
 
-#define MAX_N 500000
-
 int main() {
-    cout << 123 % 10 << endl;
+    int n;
+    cin >> n;
+    int *arr = new int[n];
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    int cnt = 0;
+    for (int i = 0; i < n;) {
+        i += arr[i];
+        cnt += 1;
+    }
+    cout << cnt << endl;
+    
+    return 0;
 }
