@@ -1,8 +1,8 @@
 /*************************************************************************
-	> File Name: 180.cpp
+	> File Name: 178.cpp
 	> Author: Zip 
 	> Mail: 307110017@qq.com 
-	> Created Time: 2019年09月19日 星期四 18时21分32秒
+	> Created Time: 2019年09月21日 星期六 00时07分26秒
  ************************************************************************/
 
 #include<iostream>
@@ -15,15 +15,24 @@
 #include<cmath>
 using namespace std;
 
-int main() {
-    int n;
-    cin >> n;
-    unsigned long long ans = 1;
-
-    ans <<= n;
-    cout << ans << endl;
-    
-    
-    return 0;
+string get_ans(int n) {
+    if (n == 1) return "A";
+    string ret;
+    string tmp = get_ans(n - 1);
+    ret += tmp;
+    ret += ('A' - 1 + n);
+    ret += tmp;
+    return ret;
 }
 
+int main() {
+    string ans;
+
+    int n;
+    cin >> n;
+
+    ans = get_ans(n);
+    
+    cout << ans << endl;
+    return 0;
+}
