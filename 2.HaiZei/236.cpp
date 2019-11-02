@@ -1,8 +1,8 @@
 /*************************************************************************
-	> File Name: 235.cpp
+	> File Name: 236.cpp
 	> Author: Zip 
 	> Mail: 307110017@qq.com 
-	> Created Time: 2019年09月18日 星期三 15时08分41秒
+	> Created Time: 2019年10月02日 星期三 22时27分00秒
  ************************************************************************/
 
 #include<iostream>
@@ -16,28 +16,29 @@
 using namespace std;
 void print(const vector<int> &vec) {
     for (int i = 0; i < vec.size(); i++) {
-        i == 0 || printf(" ");
+        i == 0 || cout << " ";
         cout << vec[i];
     }
     cout << endl;
-}
-void output(vector<int> vec, int now, int n) {
-    vec.push_back(now);
-    print(vec);
-    if (now < n) {
-        output(vec, now + 1, n);
-        vec.pop_back();
-        output(vec, now + 1, n);
-    }
     return ;
+}
+void output(vector<int> vec, int now, int sum, int n, int m) {
+    if (n - now + 1 + sum < m) return ;
+    if (sum == m) {
+        print(vec);
+        return ;
+    }
+    vec.push_back(now);
+    output(vec, now + 1, sum + 1, n, m);
+    vec.pop_back();
+    output(vec, now + 1, sum, n, m);
 }
 
 int main() {
-    int n;
-    cin >> n;
+    int n, m;
+    cin >> n >> m;
     vector<int> vec;
-    output(vec, 1, n);
-
-
+    output(vec, 1, 0, n, m);
+    
     return 0;
 }
